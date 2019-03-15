@@ -10,8 +10,8 @@ client = Client(account_sid, auth_token)
 message = client.messages \
     .create(
          body='This is the Mahesh ship that made the Kessel Run in fourteen parsecs?',
-         from_='+12407136035',
-         to='+919003120258'
+         from_='+xxxx',
+         to='+xxxx'
      )
 
 print(message.sid)
