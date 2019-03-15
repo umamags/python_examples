@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="block1">
+<h1>Hello Tools!!</h1> 
+</div>
+    {% if tools %}
+        <table border="2">
+        	<thead>
+        		<th>SNo</th>
+        		<th>Name</th>
+        		<th>Summary</th>
+        		<th>Documents</th>
+        		<th>Tags</th>
+        		<th>AppHub</th>
+        		<th>ToolStage</th>
+        		<th>Support Type</th>
+        		<th>Technologies</th>
+        		<th>Process</th>
+        		<th>ClientList</th>
+        		<th>Main Contacts</th>
+        		<th>Cost</th>
+        		<th>Benefits</th>
+        	</thead>
+            <tbody>
+            {% for tool in tools %}
+                <tr>
+                    <td>{{ tool.sno }}</td>
+                    <td>{{ tool.name}}</td>
+                    <td>{{ tool.summary}}</td>
+                    <td>
+                    	<table>
+			            {% for doc in tool.docs %}
+			            	<tr><td>{{ doc}}</td></tr>	
+			            {% endfor %}
+                    	</table>	
+                    </td>
+                    <td>{{ tool.tags}}</td>
+                    <td>{{ tool.apphub}}</td>
+                    <td>{{ tool.toolstage}}</td>
+                    <td>{{ tool.supporttype}}</td>
+                    <td>{{ tool.technologies}}</td>
+                    <td>{{ tool.process}}</td>
+                    <td>{{ tool.clientlist}}</td>
+                    <td>{{ tool.maincontacts}}</td>
+                    <td>{{ tool.cost}}</td>
+                    <td>{{ tool.benefits}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        No results :(
+    {% endif %}
+{% endblock %}
